@@ -114,8 +114,5 @@ crashlytics-build.properties
 # ignore sass output
 public/stylesheets/**/*.css
 
-# ignore submodules
-mturk
-
 # ignore properties file
 config.js
