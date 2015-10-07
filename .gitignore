@@ -118,4 +118,4 @@ public/stylesheets/**/*.css
 mturk
 
 # ignore properties file
-config.json
+config.js

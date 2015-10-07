@@ -14,11 +14,13 @@
   },
   "dependencies": {
     "async": "^1.4.2",
+    "aws-sdk": "^2.2.4",
     "express": "^4.13.3",
     "libxmljs": "^0.14.3",
     "node-crontab": "0.0.8",
     "querystring": "^0.2.0",
     "request": "^2.64.0",
+    "restify": "^4.0.3",
     "urlencode": "^1.1.0",
     "validator": "~2.0.0"
   }
