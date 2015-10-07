@@ -1,0 +1,7 @@
+{
+  "sandbox" : true,
+  "credentials" : {
+    "accessKey" : "",
+    "secretKey" : ""
+  }
+}

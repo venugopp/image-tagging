@@ -1,0 +1,25 @@
+{
+  "name": "tagging",
+  "version": "1.0.0",
+  "description": "Asset manager for tagging assets using mTurk APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "venugopp",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "~1.16.2",
+    "chai": "~1.8.1"
+  },
+  "dependencies": {
+    "async": "^1.4.2",
+    "express": "^4.13.3",
+    "libxmljs": "^0.14.3",
+    "node-crontab": "0.0.8",
+    "querystring": "^0.2.0",
+    "request": "^2.64.0",
+    "urlencode": "^1.1.0",
+    "validator": "~2.0.0"
+  }
+}
