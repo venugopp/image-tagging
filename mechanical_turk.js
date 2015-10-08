@@ -25,7 +25,7 @@ exports.createHITType = function () {
 
 exports.createHITs = function (data) {
   data.forEach( function(row){
-    console.log(row.assetId + " => " + row.assetData.contentUrl);
+    //console.log(row.assetId + " => " + row.assetData.contentUrl);
     var create_hit = {
       "HITTypeId" : "38MPDVA2YPC8Q178KG2Q9327UC4MGJ",
       "Question" : getQuestionForm(row.assetData.contentUrl),

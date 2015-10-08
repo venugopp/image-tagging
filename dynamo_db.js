@@ -276,7 +276,7 @@ exports.updateResponseData = function (asset_id, status, response, callback) {
   docClient.update(params, function(err, data) {
     if (err) console.log(err, err.stack); // an error occurred
     else {
-      console.log(data);           // successful response
+      //console.log(data);           // successful response
       callback(null);
     }
   });
