@@ -4,6 +4,7 @@ var mech_turk = require('./mechanical_turk');
 var db = require('./dynamo_db');
 var crontab = require('node-crontab');
 var http = require('http');
+var urlencode = require('urlencode');
 
 //var jobId = crontab.scheduleJob("*/1 * * * *", function(){
 //  var d = new Date();
@@ -112,7 +113,7 @@ function sendUpdatedResult() {
         host : 'localhost',
         port : 8888,
         method : 'GET',
-        path: '/example/asset_save.php?id='+ row.asset_id.S + '&tag=' + tags
+        path: '/example/asset_save.php?id='+ row.asset_id.S + '&tag=' + urlencode(tags)
       };
       //@TODO: Replace this with actual source
       //console.log(options);
