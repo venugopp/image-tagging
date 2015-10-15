@@ -6,19 +6,9 @@ var crontab = require('node-crontab');
 var http = require('http');
 var urlencode = require('urlencode');
 
-//var jobId = crontab.scheduleJob("*/1 * * * *", function(){
-//  var d = new Date();
-//  console.log("It's been 1 minutes! @ " + d.getTime());
-//});
-
-
-// To list the created HITs.
-//mech_turk.listHITs();
-
-
-// To Insert in HIT Archive with assets which need to be tagged.
-//getNewAssetsIntoHITArchive();
-
+/*
+ * Callback for injesting assets.
+ */
 function getNewAssetsIntoHITArchive() {
   var options = {
     host : 'localhost',
@@ -63,11 +53,9 @@ function getNewAssetsIntoHITArchive() {
   }).end();
 }
 
-
-
-// To create mTurk tasks(HITs)
-//createNewHITsFromHITArchive();
-
+/*
+ * Callback for creating mTurk Tasks.
+ */
 function createNewHITsFromHITArchive() {
   db.getAssets(0, 10, function (err, response) {
     if (err) throw err;
@@ -89,14 +77,9 @@ function createNewHITsFromHITArchive() {
   });
 }
 
-
-// To Update the tags in HIT Archive once the Task is completed.
-//mech_turk.completedHITs();
-
-
-// To Update the tags back to source
-sendUpdatedResult();
-
+/*
+ * Callback for updating the source with data.
+ */
 function sendUpdatedResult() {
   // Get all the assets which are completed from mTURK(status=2)
   db.getAssets(2, 10, function (err, response) {
@@ -136,3 +119,32 @@ function sendUpdatedResult() {
     });
   });
 }
+
+
+// To list the created HITs.
+//mech_turk.listHITs();
+
+
+// To Insert in HIT Archive with assets which need to be tagged.
+//getNewAssetsIntoHITArchive();
+
+
+// To create mTurk tasks(HITs)
+//createNewHITsFromHITArchive();
+
+
+// To Update the tags in HIT Archive once the Task is completed.
+//mech_turk.completedHITs();
+
+
+// To Update the tags back to source
+//sendUpdatedResult();
+
+
+/*
+ * Sample Cron setup.
+ */
+//var jobId = crontab.scheduleJob("*/1 * * * *", function(){
+//  var d = new Date();
+//  console.log("It's been 1 minutes! @ " + d.getTime());
+//});
